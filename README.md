@@ -137,7 +137,7 @@ This ensures consistent code quality and prevents common errors before changes a
 ---
 
 ## Idempodency and reporting
-```
+
 First ansible run:
 ```
 PLAY [Configure EC2 web host] *********************************************************************************************************************************************************
