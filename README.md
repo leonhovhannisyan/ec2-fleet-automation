@@ -142,13 +142,31 @@ Paste screenshots below:
 ```
 [ PLACEHOLDER: GitHub Actions CI passing ]
 ```
-
+First ansible run:
 ```
-[ PLACEHOLDER: Successful Ansible run ]
+<img width="1468" height="608" alt="image" src="https://github.com/user-attachments/assets/c61ad7c5-1064-418e-96ef-7ce81a893072" />
 ```
-
+Idempodency after second ansible run:
 ```
-[ PLACEHOLDER: Example JSON report ]
+<img width="1469" height="572" alt="image" src="https://github.com/user-attachments/assets/0018186b-1365-4f44-907e-32bd719ea88a" />
+```
+```
+{
+  "timestamp": "2026-01-01T23:08:07.774252+00:00",
+  "target": {
+    "user": "ubuntu",
+    "ip": "51.20.78.23"
+  },
+  "checks": {
+    "uptime": "up 36 minutes",
+    "disk_root": "/dev/root       7.6G  2.0G  5.6G  27% /",
+    "nginx_active": "active",
+    "os_release": "\"Ubuntu 22.04.5 LTS\"",
+    "kernel": "6.8.0-1044-aws",
+    "nginx_version": "nginx version: nginx/1.18.0 (Ubuntu)",
+    "http_status": "200"
+  }
+}
 ```
 
 ---
