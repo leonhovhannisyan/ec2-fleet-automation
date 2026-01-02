@@ -206,6 +206,7 @@ changed: [web-1]
 PLAY RECAP ****************************************************************************************************************************************************************************
 web-1                      : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
+Sample json instance report generated via python script:
 ```
 {
   "timestamp": "2026-01-01T23:08:07.774252+00:00",
