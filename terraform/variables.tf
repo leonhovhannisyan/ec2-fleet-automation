@@ -18,5 +18,5 @@ variable "ssh_allowed_cidr" {
 variable "key_pair_name" {
   type        = string
   description = "Existing AWS EC2 Key Pair name to use for SSH"
-  default = "ec2-fleet-keypair"
+  default     = "ec2-fleet-keypair"
 }
