@@ -1,0 +1,7 @@
+---
+- name: Configure EC2 web host
+  hosts: web
+  become: true
+  roles:
+    - common
+    - web

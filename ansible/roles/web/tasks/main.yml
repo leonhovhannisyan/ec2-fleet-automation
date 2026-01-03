@@ -1,0 +1,17 @@
+---
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Ensure nginx is enabled and running
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Deploy index.html
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    mode: "0644"
