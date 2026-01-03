@@ -1,0 +1,5 @@
+---
+managed_users:
+  - name: devops
+    groups: ["sudo"]
+    ssh_public_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMKdSjLd1i1rLWoKSW9EcUDi+mQ+sofQ4+lTaUlJKkqf ec2-fleet-keypair"
