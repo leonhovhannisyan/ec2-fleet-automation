@@ -49,6 +49,10 @@ def main():
     report["checks"]["uptime"] = ssh(user, ip, "uptime -p || true")
     report["checks"]["disk_root"] = ssh(user, ip, "df -h / | tail -n1 || true")
     report["checks"]["nginx_active"] = ssh(user, ip, "systemctl is-active nginx || true")
+    report["checks"]["os_release"] = ssh(user, ip, "cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2- || true")
+    report["checks"]["kernel"] = ssh(user, ip, "uname -r || true")
+    report["checks"]["nginx_version"] = ssh(user, ip, "nginx -v 2>&1 || true")
+    report["checks"]["http_status"] = ssh(user, ip, "curl -s -o /dev/null -w '%{http_code}\n' http://localhost || true")
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(report, indent=2))
