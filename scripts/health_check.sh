@@ -16,7 +16,12 @@ USER="$(awk -F= '/^ansible_user=/{print $2}' "${INV_FILE}" | head -n1)"
 echo "Target: ${USER}@${IP}"
 
 echo "[1/3] Ping..."
-ping -c 1 -W 2 "${IP}" >/dev/null && echo "OK"
+if ping -c 1 -W 2 "${IP}" >/dev/null 2>&1; then
+  echo "OK"
+else
+  echo "FAIL"
+  exit 1
+fi
 
 echo "[2/3] SSH..."
 ssh -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=5 "${USER}@${IP}" "echo OK" >/dev/null && echo "OK"
